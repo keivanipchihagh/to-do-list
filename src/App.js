@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Header from './Components/Header'
 import Tasks from './Components/Tasks'
+import Form from './Components/Form'
+import Button from './Components/Button'
 
 function App() {
 
@@ -36,8 +38,10 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={`App border-radius-5`}>
       <Header />
+      <Button />
+      <Form />
       <br />
       {(tasks.length > 0) ? <Tasks tasks={tasks} onToggle={toggleStarred} onDelete={deleteTask} /> : <span>Yey! You can take the rest of the day off 😋</span>}
     </div>

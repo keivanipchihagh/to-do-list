@@ -22,7 +22,6 @@ body {
 .App {
   border: 1px solid whitesmoke;
   padding: 5px 10px;
-  border-radius: 5px;
 }
 
 .Header h1 {
@@ -30,10 +29,8 @@ body {
 }
 
 .Task {
-  background-color: whitesmoke;
   margin: 10px 0px;
   padding: 5px 10px;
-  border-radius: 5px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   cursor: pointer;
   position: relative;
@@ -47,12 +44,87 @@ body {
   margin: 0px;
 }
 
-.Task-starred {
-  border-left: 10px solid #ffc107;
-}
 
 .Task-times {
   position: absolute;
   top: 18px;
   right: 10px;
+}
+
+.ToggleBtn {
+  background-color: black;
+  border: none;
+  color: white;  
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.Submitbtn {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+
+.Form {
+  padding: 5px 10px;
+}
+
+.Form .form-control {
+  padding: 5px 10px;
+}
+
+.whiteBg {
+  background-color: white;
+}
+
+.border-radius-5 {
+  border-radius: 5px;
+}
+
+.flex-box {
+  display:flex;
+  justify-content: flex-end;
+}
+
+.golden-border-l {
+  border-left: 10px solid #ffc107;
+}
+
+.form-control {
+  margin: 0px 0;
+}
+
+.form-control label {
+  display: block;
+}
+
+.form-control input {
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.star {
+  visibility: hidden;
+  font-size: 25px;
+  cursor: pointer;
+  color: #ffc107;
+}
+.star:before {
+  content: "\2606";
+  position: relative;
+  top: -11px;
+  left: -3px;
+  visibility: visible;
+}
+.star:checked:before {
+  content: "\2605";
+  position: relative;
+  top: -11px;
+  left: -3px;
 }
