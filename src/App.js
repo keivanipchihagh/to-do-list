@@ -42,6 +42,13 @@ function App() {
     setTasks(tasks.filter(task => task.id !== id))
   }
 
+  // Add a task
+  const addTask = (task) => {
+    const id = tasks.length + 1
+    const newTask = {...task, id}
+    setTasks([...tasks, newTask])
+  }
+
   return (
     <div className={`App border-radius-5`}>
       <Header />
@@ -50,7 +57,7 @@ function App() {
         <button className={`ToggleBtn border-radius-5`} onClick={toggleForm}>{showForm ? 'Hide Form' : 'Show Form'}</button>
       </div>
 
-      { showForm && <Form />}
+      { showForm && <Form onAdd={addTask} />}
       <br />
       {(tasks.length > 0) ? <Tasks tasks={tasks} onToggle={toggleStarred} onDelete={deleteTask} /> : <span>Yey! You can take the rest of the day off 😋</span>}
     </div>
