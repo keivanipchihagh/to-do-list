@@ -36,6 +36,7 @@ body {
   border-radius: 5px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   cursor: pointer;
+  position: relative;
 }
 
 .Task h3 {
@@ -48,4 +49,10 @@ body {
 
 .Task-starred {
   border-left: 10px solid #ffc107;
+}
+
+.Task-times {
+  position: absolute;
+  top: 18px;
+  right: 10px;
 }

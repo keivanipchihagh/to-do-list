@@ -30,11 +30,16 @@ function App() {
     setTasks(tasks.map(task => (task.id === id) ? {...task, starred: !task.starred} : task))
   }
 
+  // Delete a task
+  const deleteTask = (id) => {
+    setTasks(tasks.filter(task => task.id !== id))
+  }
+
   return (
     <div className="App">
       <Header />
       <br />
-      <Tasks tasks={tasks} onToggle={toggleStarred} />
+      {(tasks.length > 0) ? <Tasks tasks={tasks} onToggle={toggleStarred} onDelete={deleteTask} /> : <span>Yey! You can take the rest of the day off 😋</span>}
     </div>
   );
 }
