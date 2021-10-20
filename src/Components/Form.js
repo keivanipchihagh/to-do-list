@@ -2,7 +2,7 @@ import React from 'react'
 
 function Form() {
     return (
-        <form className={`Form whiteBg border-radius-5`}>                
+        <form className={`Form whiteBg box-shadow-s border-radius-5`}>                
             <div className="form-control">
                 <label>Title</label>
                 <input type="text" placeholder="Max 50 characters" />

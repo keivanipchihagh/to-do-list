@@ -30,18 +30,18 @@ body {
 
 .Task {
   margin: 10px 0px;
-  padding: 5px 10px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 5px 10px;  
   cursor: pointer;
   position: relative;
 }
 
-.Task h3 {
-  margin: 0px 10px;
+.Task h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
 }
 
 .Task p {
-  margin: 0px;
+  margin: 5px;
+  font-size: 14px;
 }
 
 
@@ -72,7 +72,7 @@ body {
 }
 
 .Form {
-  padding: 5px 10px;
+  padding: 10px;
 }
 
 .Form .form-control {
@@ -97,7 +97,7 @@ body {
 }
 
 .form-control {
-  margin: 0px 0;
+  margin: 5px 0;
 }
 
 .form-control label {
@@ -106,7 +106,10 @@ body {
 
 .form-control input {
   width: 100%;
-  padding: 5px 10px;
+  padding: 5px 10px;  
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #999;
 }
 
 .star {
@@ -115,6 +118,7 @@ body {
   cursor: pointer;
   color: #ffc107;
 }
+
 .star:before {
   content: "\2606";
   position: relative;
@@ -122,9 +126,14 @@ body {
   left: -3px;
   visibility: visible;
 }
+
 .star:checked:before {
   content: "\2605";
   position: relative;
   top: -11px;
   left: -3px;
+}
+
+.box-shadow-s {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }

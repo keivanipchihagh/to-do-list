@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Header from './Components/Header'
 import Tasks from './Components/Tasks'
 import Form from './Components/Form'
-import Button from './Components/Button'
 
 function App() {
 
@@ -10,22 +9,28 @@ function App() {
     {
       id: 1,
       title: 'Practice Germany',
-      description: 'Review A1.2 course & Duolingo',
+      description: 'Review A1.2 course & Duolingo.',
       starred: false,
     },
     {
       id: 2,
       title: 'DB HW-1',
-      description: 'Review and complete database HW-1',      
+      description: 'Review and complete database HW-1.',      
       starred: true,
     },
     {
       id: 3,
       title: 'DataCamp Course',
-      description: 'Complete the Data Science course on DataCamp',
+      description: 'Complete the Data Science course on DataCamp.',
       starred: false,
     }
   ])
+  const [showForm, setShowForm] = useState(false)
+
+  // Toggle the form
+  const toggleForm = () => {
+    setShowForm(!showForm)
+  }
 
   // Toggle starred status of a task
   const toggleStarred = (id) => {
@@ -40,8 +45,12 @@ function App() {
   return (
     <div className={`App border-radius-5`}>
       <Header />
-      <Button />
-      <Form />
+
+      <div className="flex-box">
+        <button className={`ToggleBtn border-radius-5`} onClick={toggleForm}>{showForm ? 'Hide Form' : 'Show Form'}</button>
+      </div>
+
+      { showForm && <Form />}
       <br />
       {(tasks.length > 0) ? <Tasks tasks={tasks} onToggle={toggleStarred} onDelete={deleteTask} /> : <span>Yey! You can take the rest of the day off 😋</span>}
     </div>
